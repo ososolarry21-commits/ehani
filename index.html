@@ -9,625 +9,164 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --forest:#1F4D45;
-  --forest-dark:#153832;
-  --ivory:#F8F5EF;
-  --ivory-dark:#F0EBE0;
-  --gold:#B68C4A;
-  --charcoal:#333333;
-  --charcoal-light:#5a5a5a;
-  --white:#FFFFFF;
-  --ease:cubic-bezier(0.4,0,0.2,1);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'Inter',sans-serif;
-  font-weight:400;
-  color:var(--charcoal);
-  background:var(--ivory);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
+:root{--forest:#1F4D45;--forest-dark:#153832;--ivory:#F8F5EF;--ivory-dark:#F0EBE0;--gold:#B68C4A;--charcoal:#333333;--charcoal-light:#5a5a5a;--white:#FFFFFF;--ease:cubic-bezier(0.4,0,0.2,1);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;font-weight:400;color:var(--charcoal);background:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 h1,h2,h3,h4,h5,h6{font-family:'Manrope',sans-serif;font-weight:600;line-height:1.15;color:var(--forest);letter-spacing:-0.02em;}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;transition:color .3s var(--ease);cursor:pointer;}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;transition:color .3s var(--ease);cursor:pointer;}
 .container{max-width:1400px;margin:0 auto;padding:0 2.5rem;}
-
-/* NAV */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(248,245,239,0.85);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid transparent;
-  transition:all .4s var(--ease);
-}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,245,239,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:all .4s var(--ease);}
 .nav.scrolled{background:rgba(248,245,239,0.98);border-bottom-color:rgba(31,77,69,0.08);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 2.5rem;max-width:1400px;margin:0 auto;}
 .logo{display:flex;align-items:center;gap:.8rem;font-family:'Manrope',sans-serif;font-weight:700;font-size:1.4rem;color:var(--forest);letter-spacing:0.02em;}
 .logo img{width:45px;height:45px;object-fit:contain;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
 .nav-links a{font-size:.92rem;font-weight:500;color:var(--charcoal);position:relative;}
-.nav-links a:not(.btn-nav)::after{
-  content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;background:var(--gold);
-  transition:width .35s var(--ease);
-}
+.nav-links a:not(.btn-nav)::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease);}
 .nav-links a:not(.btn-nav):hover::after{width:100%;}
-.btn-nav{
-  background:var(--forest);color:var(--ivory)!important;
-  padding:.75rem 1.6rem;border-radius:8px;
-  transition:all .3s var(--ease);
-}
+.btn-nav{background:var(--forest);color:var(--ivory)!important;padding:.75rem 1.6rem;border-radius:8px;transition:all .3s var(--ease);}
 .btn-nav:hover{background:var(--forest-dark);transform:translateY(-1px);}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px;}
 .nav-toggle span{width:22px;height:1.5px;background:var(--forest);transition:.3s;}
-
-/* HERO */
-.hero{
-  min-height:100vh;
-  background:var(--ivory);
-  display:flex;align-items:center;
-  position:relative;
-  padding:10rem 0 6rem;
-  overflow:hidden;
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:center;
-  width:100%;
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:.8rem;
-  font-size:.82rem;font-weight:500;
-  color:var(--gold);text-transform:uppercase;letter-spacing:.2em;
-  margin-bottom:2rem;
-}
+.hero{min-height:100vh;background:var(--ivory);display:flex;align-items:center;position:relative;padding:10rem 0 6rem;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:center;width:100%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.8rem;font-size:.82rem;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:.2em;margin-bottom:2rem;}
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
-.hero h1{
-  font-size:clamp(3rem,6.5vw,6.2rem);
-  font-weight:600;
-  line-height:1.02;
-  letter-spacing:-0.035em;
-  margin-bottom:2rem;
-  color:var(--forest);
-}
+.hero h1{font-size:clamp(3rem,6.5vw,6.2rem);font-weight:600;line-height:1.02;letter-spacing:-0.035em;margin-bottom:2rem;color:var(--forest);}
 .hero h1 em{font-style:normal;color:var(--gold);font-weight:300;}
-.hero-sub{
-  font-size:1.25rem;
-  line-height:1.6;
-  color:var(--charcoal-light);
-  max-width:540px;
-  margin-bottom:3rem;
-}
+.hero-sub{font-size:1.25rem;line-height:1.6;color:var(--charcoal-light);max-width:540px;margin-bottom:3rem;}
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
-.btn{
-  display:inline-flex;align-items:center;gap:.6rem;
-  padding:1.05rem 2rem;border-radius:8px;
-  font-size:.95rem;font-weight:500;
-  transition:all .35s var(--ease);
-  cursor:pointer;border:none;
-}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1.05rem 2rem;border-radius:8px;font-size:.95rem;font-weight:500;transition:all .35s var(--ease);cursor:pointer;border:none;}
 .btn-primary{background:var(--forest);color:var(--ivory);}
 .btn-primary:hover{background:var(--forest-dark);transform:translateY(-2px);box-shadow:0 12px 30px rgba(31,77,69,0.25);}
 .btn-secondary{background:transparent;color:var(--forest);border:1.5px solid var(--forest);}
 .btn-secondary:hover{background:var(--forest);color:var(--ivory);}
-.btn svg{transition:transform .3s var(--ease);}
-.btn:hover svg{transform:translateX(4px);}
-
-.hero-visual{position:relative;}
-.hero-image{
-  width:100%;aspect-ratio:4/5;
-  border-radius:4px;
-  overflow:hidden;
-  box-shadow:0 40px 80px -20px rgba(31,77,69,0.25);
-}
+.btn svg{transition:transform .3s var(--ease);}.btn:hover svg{transform:translateX(4px);}
+.hero-visual{position:relative;}.hero-image{width:100%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;box-shadow:0 40px 80px -20px rgba(31,77,69,0.25);}
 .hero-image img{width:100%;height:100%;object-fit:cover;}
-.hero-float{
-  position:absolute;
-  background:var(--white);
-  padding:1.3rem 1.6rem;
-  border-radius:12px;
-  box-shadow:0 20px 40px -15px rgba(31,77,69,0.2);
-  display:flex;align-items:center;gap:1rem;
-}
-.hero-float.f1{top:8%;left:-8%;animation:float 6s ease-in-out infinite;}
-.hero-float.f2{bottom:10%;right:-6%;animation:float 6s ease-in-out 2s infinite;}
+.hero-float{position:absolute;background:var(--white);padding:1.3rem 1.6rem;border-radius:12px;box-shadow:0 20px 40px -15px rgba(31,77,69,0.2);display:flex;align-items:center;gap:1rem;}
+.hero-float.f1{top:8%;left:-8%;animation:float 6s ease-in-out infinite;}.hero-float.f2{bottom:10%;right:-6%;animation:float 6s ease-in-out 2s infinite;}
 .hero-float-label{font-size:.72rem;color:var(--charcoal-light);text-transform:uppercase;letter-spacing:.1em;}
 .hero-float-value{font-family:'Manrope',sans-serif;font-weight:600;color:var(--forest);font-size:1.05rem;}
-
-.scroll-indicator{
-  position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.8rem;
-  color:var(--charcoal-light);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
-}
+.scroll-indicator{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.8rem;color:var(--charcoal-light);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;}
 .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 2.5s ease-in-out infinite;}
-
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
-
-/* SECTIONS */
 section{padding:8rem 0;}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:.8rem;
-  font-size:.78rem;font-weight:500;
-  color:var(--gold);text-transform:uppercase;letter-spacing:.2em;
-  margin-bottom:1.5rem;
-}
+.eyebrow{display:inline-flex;align-items:center;gap:.8rem;font-size:.78rem;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:.2em;margin-bottom:1.5rem;}
 .eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);}
-.section-title{
-  font-size:clamp(2.2rem,4.5vw,3.8rem);
-  font-weight:500;
-  line-height:1.1;
-  letter-spacing:-0.025em;
-  margin-bottom:1.5rem;
-}
-.section-subtitle{
-  font-size:1.15rem;line-height:1.7;
-  color:var(--charcoal-light);
-  max-width:620px;
-}
-
-/* TRUST BANNER */
-.trust{
-  background:var(--forest);
-  padding:5rem 0;
-  overflow:hidden;
-}
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:2rem;
-}
-.trust-item{
-  text-align:center;color:var(--ivory);
-  padding:0 1rem;
-  border-right:1px solid rgba(248,245,239,0.12);
-}
+.section-title{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:500;line-height:1.1;letter-spacing:-0.025em;margin-bottom:1.5rem;}
+.section-subtitle{font-size:1.15rem;line-height:1.7;color:var(--charcoal-light);max-width:620px;}
+.trust{background:var(--forest);padding:5rem 0;overflow:hidden;}
+.trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2rem;}
+.trust-item{text-align:center;color:var(--ivory);padding:0 1rem;border-right:1px solid rgba(248,245,239,0.12);}
 .trust-item:last-child{border-right:none;}
-.trust-item p{
-  font-family:'Manrope',sans-serif;
-  font-weight:400;
-  font-size:.95rem;
-  letter-spacing:0.01em;
-  line-height:1.4;
-}
-.trust-item::before{
-  content:'';display:block;width:20px;height:1px;background:var(--gold);
-  margin:0 auto 1.2rem;
-}
-
-/* PHILOSOPHY */
-.philosophy{background:var(--ivory);}
-.philosophy-grid{
-  display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:center;
-}
-.philosophy-quote{
-  font-family:'Manrope',sans-serif;
-  font-size:clamp(1.5rem,2.3vw,2.1rem);
-  font-weight:400;
-  line-height:1.4;
-  color:var(--forest);
-  letter-spacing:-0.01em;
-  margin-top:2rem;
-  padding-left:2rem;
-  border-left:2px solid var(--gold);
-}
-.philosophy-image{
-  aspect-ratio:4/5;border-radius:4px;overflow:hidden;
-  box-shadow:0 30px 60px -20px rgba(31,77,69,0.2);
-}
+.trust-item p{font-family:'Manrope',sans-serif;font-weight:400;font-size:.95rem;letter-spacing:0.01em;line-height:1.4;}
+.trust-item::before{content:'';display:block;width:20px;height:1px;background:var(--gold);margin:0 auto 1.2rem;}
+.philosophy{background:var(--ivory);}.philosophy-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:center;}
+.philosophy-quote{font-family:'Manrope',sans-serif;font-size:clamp(1.5rem,2.3vw,2.1rem);font-weight:400;line-height:1.4;color:var(--forest);letter-spacing:-0.01em;margin-top:2rem;padding-left:2rem;border-left:2px solid var(--gold);}
+.philosophy-image{aspect-ratio:4/5;border-radius:4px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(31,77,69,0.2);}
 .philosophy-image img{width:100%;height:100%;object-fit:cover;}
-
-/* WHO WE HELP */
-.help{background:var(--white);}
-.help-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;
-}
-.help-card{
-  background:var(--ivory);
-  padding:2.5rem 2rem;
-  border-radius:12px;
-  transition:all .4s var(--ease);
-  border:1px solid transparent;
-  cursor:default;
-}
-.help-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(31,77,69,0.1);
-  box-shadow:0 20px 40px -20px rgba(31,77,69,0.15);
-}
-.help-card h3{
-  font-size:1.3rem;margin-bottom:.6rem;font-weight:600;
-}
-.help-card p{
-  font-size:.95rem;color:var(--charcoal-light);line-height:1.55;
-}
-
-/* SOLUTIONS */
-.solutions{background:var(--ivory);}
-.solution-row{
-  display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;
-  padding:4rem 0;
-  border-bottom:1px solid rgba(31,77,69,0.1);
-  align-items:start;
-}
-.solution-row:last-child{border-bottom:none;}
-.solution-row h3{
-  font-size:clamp(1.8rem,2.5vw,2.4rem);
-  font-weight:500;
-  line-height:1.15;
-  letter-spacing:-0.02em;
-}
-.solution-row .num{
-  font-family:'Manrope',sans-serif;
-  font-size:.85rem;
-  color:var(--gold);
-  letter-spacing:.2em;
-  margin-bottom:1rem;
-  display:block;
-}
+.help{background:var(--white);}.help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;}
+.help-card{background:var(--ivory);padding:2.5rem 2rem;border-radius:12px;transition:all .4s var(--ease);border:1px solid transparent;cursor:default;}
+.help-card:hover{transform:translateY(-6px);border-color:rgba(31,77,69,0.1);box-shadow:0 20px 40px -20px rgba(31,77,69,0.15);}
+.help-card h3{font-size:1.3rem;margin-bottom:.6rem;font-weight:600;}.help-card p{font-size:.95rem;color:var(--charcoal-light);line-height:1.55;}
+.solutions{background:var(--ivory);}.solution-row{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;padding:4rem 0;border-bottom:1px solid rgba(31,77,69,0.1);align-items:start;}
+.solution-row:last-child{border-bottom:none;}.solution-row h3{font-size:clamp(1.8rem,2.5vw,2.4rem);font-weight:500;line-height:1.15;letter-spacing:-0.02em;}
+.solution-row .num{font-family:'Manrope',sans-serif;font-size:.85rem;color:var(--gold);letter-spacing:.2em;margin-bottom:1rem;display:block;}
 .solution-detail{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
-.solution-detail-block h4{
-  font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;
-  color:var(--gold);margin-bottom:.8rem;font-weight:600;
-  font-family:'Inter',sans-serif;
-}
-.solution-detail-block p{
-  font-size:.98rem;line-height:1.65;color:var(--charcoal);
-}
-
-/* PROCESS */
-.process{background:var(--forest);color:var(--ivory);}
-.process .eyebrow{color:var(--gold);}
-.process .eyebrow::before{background:var(--gold);}
-.process .section-title{color:var(--ivory);}
-.process .section-subtitle{color:rgba(248,245,239,0.7);}
-.process-list{margin-top:5rem;}
-.process-item{
-  display:grid;grid-template-columns:80px 1fr 2fr;gap:3rem;
-  padding:3rem 0;
-  border-top:1px solid rgba(248,245,239,0.15);
-  align-items:start;
-  transition:all .4s var(--ease);
-}
-.process-item:hover{padding-left:1rem;}
-.process-item .step{
-  font-family:'Manrope',sans-serif;
-  font-size:1.1rem;
-  color:var(--gold);
-  letter-spacing:.15em;
-  font-weight:500;
-}
-.process-item h3{
-  color:var(--ivory);
-  font-size:1.8rem;
-  font-weight:500;
-  letter-spacing:-0.015em;
-}
-.process-item p{
-  color:rgba(248,245,239,0.75);
-  line-height:1.7;
-  max-width:580px;
-}
-
-/* CASE STUDIES */
-.case{background:var(--white);}
-.case-featured{
-  display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;
-  margin-top:4rem;align-items:center;
-}
-.case-image{
-  aspect-ratio:4/5;border-radius:4px;overflow:hidden;
-  box-shadow:0 30px 60px -20px rgba(31,77,69,0.2);
-}
-.case-image img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease);}
-.case-image:hover img{transform:scale(1.03);}
-.case-tag{
-  display:inline-block;font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;
-  color:var(--gold);margin-bottom:1.2rem;font-weight:500;
-}
-.case-featured h3{
-  font-size:clamp(1.8rem,2.8vw,2.6rem);
-  font-weight:500;line-height:1.15;letter-spacing:-0.02em;
-  margin-bottom:2rem;
-}
-.case-section{margin-bottom:1.5rem;}
-.case-section h5{
-  font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;
-  color:var(--charcoal-light);margin-bottom:.5rem;font-weight:600;
-  font-family:'Inter',sans-serif;
-}
+.solution-detail-block h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:.8rem;font-weight:600;font-family:'Inter',sans-serif;}
+.solution-detail-block p{font-size:.98rem;line-height:1.65;color:var(--charcoal);}
+.process{background:var(--forest);color:var(--ivory);}.process .eyebrow{color:var(--gold);}.process .eyebrow::before{background:var(--gold);}
+.process .section-title{color:var(--ivory);}.process .section-subtitle{color:rgba(248,245,239,0.7);}
+.process-list{margin-top:5rem;}.process-item{display:grid;grid-template-columns:80px 1fr 2fr;gap:3rem;padding:3rem 0;border-top:1px solid rgba(248,245,239,0.15);align-items:start;transition:all .4s var(--ease);}
+.process-item:hover{padding-left:1rem;}.process-item .step{font-family:'Manrope',sans-serif;font-size:1.1rem;color:var(--gold);letter-spacing:.15em;font-weight:500;}
+.process-item h3{color:var(--ivory);font-size:1.8rem;font-weight:500;letter-spacing:-0.015em;}.process-item p{color:rgba(248,245,239,0.75);line-height:1.7;max-width:580px;}
+.case{background:var(--white);}.case-featured{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;margin-top:4rem;align-items:center;}
+.case-image{aspect-ratio:4/5;border-radius:4px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(31,77,69,0.2);}
+.case-image img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease);}.case-image:hover img{transform:scale(1.03);}
+.case-tag{display:inline-block;font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:1.2rem;font-weight:500;}
+.case-featured h3{font-size:clamp(1.8rem,2.8vw,2.6rem);font-weight:500;line-height:1.15;letter-spacing:-0.02em;margin-bottom:2rem;}
+.case-section{margin-bottom:1.5rem;}.case-section h5{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:var(--charcoal-light);margin-bottom:.5rem;font-weight:600;font-family:'Inter',sans-serif;}
 .case-section p{font-size:1rem;line-height:1.65;color:var(--charcoal);}
-
-/* INSIGHTS */
-.insights{background:var(--ivory);}
-.insights-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem;
-}
-.insight-card{
-  background:var(--white);border-radius:12px;overflow:hidden;
-  transition:all .4s var(--ease);cursor:pointer;
-  border:1px solid rgba(31,77,69,0.06);
-}
-.insight-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 30px 50px -20px rgba(31,77,69,0.15);
-}
-.insight-image{aspect-ratio:16/10;overflow:hidden;}
-.insight-image img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);}
+.insights{background:var(--ivory);}.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem;}
+.insight-card{background:var(--white);border-radius:12px;overflow:hidden;transition:all .4s var(--ease);cursor:pointer;border:1px solid rgba(31,77,69,0.06);}
+.insight-card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -20px rgba(31,77,69,0.15);}
+.insight-image{aspect-ratio:16/10;overflow:hidden;}.insight-image img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);}
 .insight-card:hover .insight-image img{transform:scale(1.05);}
-.insight-body{padding:1.8rem;}
-.insight-body .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);font-weight:600;}
+.insight-body{padding:1.8rem;}.insight-body .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);font-weight:600;}
 .insight-body h4{font-size:1.25rem;font-weight:500;line-height:1.3;margin:.7rem 0 1rem;letter-spacing:-0.01em;}
 .insight-body .read{font-size:.85rem;color:var(--forest);font-weight:500;display:inline-flex;align-items:center;gap:.4rem;}
-
-/* VENTURES */
-.ventures{background:var(--white);}
-.ventures-intro{max-width:720px;margin-bottom:4rem;}
-.ventures-card{
-  background:var(--ivory);border-radius:12px;padding:3rem;
-  display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;
-  border:1px solid rgba(31,77,69,0.08);
-  transition:all .4s var(--ease);
-}
-.ventures-card:hover{border-color:rgba(31,77,69,0.2);}
-.ventures-card h3{
-  font-size:2.4rem;font-weight:500;letter-spacing:-0.025em;margin-bottom:.8rem;
-}
+.ventures{background:var(--white);}.ventures-intro{max-width:720px;margin-bottom:4rem;}
+.ventures-card{background:var(--ivory);border-radius:12px;padding:3rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;border:1px solid rgba(31,77,69,0.08);transition:all .4s var(--ease);}
+.ventures-card:hover{border-color:rgba(31,77,69,0.2);}.ventures-card h3{font-size:2.4rem;font-weight:500;letter-spacing:-0.025em;margin-bottom:.8rem;}
 .ventures-card p{font-size:1rem;line-height:1.65;color:var(--charcoal-light);max-width:560px;}
-.ventures-status{
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:var(--forest);color:var(--ivory);
-  padding:.6rem 1.2rem;border-radius:50px;
-  font-size:.8rem;font-weight:500;letter-spacing:.05em;
-}
+.ventures-status{display:inline-flex;align-items:center;gap:.6rem;background:var(--forest);color:var(--ivory);padding:.6rem 1.2rem;border-radius:50px;font-size:.8rem;font-weight:500;letter-spacing:.05em;}
 .ventures-status::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-
-/* CTA */
-.cta-section{
-  background:var(--forest);
-  color:var(--ivory);
-  text-align:center;
-  padding:8rem 0;
-}
-.cta-section h2{
-  color:var(--ivory);
-  font-size:clamp(2.4rem,5vw,4rem);
-  font-weight:500;letter-spacing:-0.03em;
-  max-width:900px;margin:0 auto 1.5rem;line-height:1.1;
-}
-.cta-section p{
-  color:rgba(248,245,239,0.75);
-  font-size:1.15rem;max-width:560px;margin:0 auto 2.5rem;line-height:1.6;
-}
+.cta-section{background:var(--forest);color:var(--ivory);text-align:center;padding:8rem 0;}
+.cta-section h2{color:var(--ivory);font-size:clamp(2.4rem,5vw,4rem);font-weight:500;letter-spacing:-0.03em;max-width:900px;margin:0 auto 1.5rem;line-height:1.1;}
+.cta-section p{color:rgba(248,245,239,0.75);font-size:1.15rem;max-width:560px;margin:0 auto 2.5rem;line-height:1.6;}
 .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.btn-gold{background:var(--gold);color:var(--forest);}
-.btn-gold:hover{background:#a07a3c;transform:translateY(-2px);}
-.btn-ghost{background:transparent;color:var(--ivory);border:1.5px solid rgba(248,245,239,0.3);}
-.btn-ghost:hover{border-color:var(--ivory);background:rgba(248,245,239,0.08);}
-
-/* CONTACT */
-.contact{background:var(--ivory);}
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;margin-top:4rem;
-}
-.contact-info h3{
-  font-size:1.6rem;font-weight:500;margin-bottom:2rem;letter-spacing:-0.015em;
-}
-.contact-line{
-  display:block;padding:1.3rem 0;
-  border-bottom:1px solid rgba(31,77,69,0.1);
-}
-.contact-line-label{
-  font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;
-  color:var(--gold);font-weight:600;margin-bottom:.4rem;display:block;
-}
-.contact-line-value{font-size:1.1rem;color:var(--forest);font-weight:500;}
-.contact-line-value.muted{color:var(--charcoal-light);}
-
-.contact-form{
-  background:var(--white);padding:3rem;border-radius:12px;
-}
-.form-row{margin-bottom:1.5rem;}
-.form-row label{
-  display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.15em;
-  color:var(--charcoal-light);margin-bottom:.5rem;font-weight:500;
-}
-.form-row input,.form-row textarea,.form-row select{
-  width:100%;background:var(--ivory);border:1px solid rgba(31,77,69,0.15);
-  padding:1rem;border-radius:6px;
-  font-family:'Inter',sans-serif;font-size:1rem;color:var(--charcoal);
-  transition:all .3s var(--ease);
-}
-.form-row input:focus,.form-row textarea:focus,.form-row select:focus{
-  outline:none;border-color:var(--forest);background:var(--white);
-}
-.form-row textarea{min-height:140px;resize:vertical;}
-.contact-form .btn{width:100%;justify-content:center;margin-top:.5rem;}
-
-/* JOURNAL ARTICLE STYLES */
-.journal-article{
-  display:none;
-  padding:10rem 0 6rem;
-  background:var(--white);
-}
-.journal-article.active{display:block;}
-.journal-header{
-  max-width:900px;
-  margin:0 auto 4rem;
-  text-align:center;
-}
-.journal-header .tag{
-  display:inline-block;
-  font-size:.8rem;
-  text-transform:uppercase;
-  letter-spacing:.2em;
-  color:var(--gold);
-  margin-bottom:1.5rem;
-  font-weight:600;
-}
-.journal-header h1{
-  font-size:clamp(2.2rem,4vw,3.5rem);
-  font-weight:500;
-  line-height:1.15;
-  letter-spacing:-0.025em;
-  margin-bottom:2rem;
-}
-.journal-meta{
-  color:var(--charcoal-light);
-  font-size:.95rem;
-}
-.journal-content{
-  max-width:760px;
-  margin:0 auto;
-  font-size:1.1rem;
-  line-height:1.85;
-  color:var(--charcoal);
-}
-.journal-content p{margin-bottom:1.8rem;}
-.journal-content h3{
-  font-size:1.6rem;
-  margin:3rem 0 1.2rem;
-  font-weight:600;
-}
-.journal-image{
-  width:100%;
-  aspect-ratio:16/9;
-  border-radius:8px;
-  overflow:hidden;
-  margin:2.5rem 0;
-}
-.journal-image img{width:100%;height:100%;object-fit:cover;}
-.back-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:.6rem;
-  margin-bottom:2rem;
-  color:var(--forest);
-  font-weight:500;
-}
-.back-btn:hover{color:var(--gold);}
-.back-btn svg{transition:transform .3s var(--ease);}
-.back-btn:hover svg{transform:translateX(-4px);}
-
-/* FOOTER */
-footer{
-  background:var(--forest-dark);
-  color:var(--ivory);
-  padding:5rem 0 2rem;
-}
-.footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;
-  padding-bottom:3rem;border-bottom:1px solid rgba(248,245,239,0.1);
-}
-.footer-brand .logo{color:var(--ivory);margin-bottom:1.5rem;}
-.footer-brand .logo img{filter:brightness(0) invert(1);}
+.btn-gold{background:var(--gold);color:var(--forest);}.btn-gold:hover{background:#a07a3c;transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--ivory);border:1.5px solid rgba(248,245,239,0.3);}.btn-ghost:hover{border-color:var(--ivory);background:rgba(248,245,239,0.08);}
+.contact{background:var(--ivory);}.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;margin-top:4rem;}
+.contact-info h3{font-size:1.6rem;font-weight:500;margin-bottom:2rem;letter-spacing:-0.015em;}
+.contact-line{display:block;padding:1.3rem 0;border-bottom:1px solid rgba(31,77,69,0.1);}
+.contact-line-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);font-weight:600;margin-bottom:.4rem;display:block;}
+.contact-line-value{font-size:1.1rem;color:var(--forest);font-weight:500;}.contact-line-value.muted{color:var(--charcoal-light);}
+.contact-form{background:var(--white);padding:3rem;border-radius:12px;}
+.form-row{margin-bottom:1.5rem;}.form-row label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.15em;color:var(--charcoal-light);margin-bottom:.5rem;font-weight:500;}
+.form-row input,.form-row textarea,.form-row select{width:100%;background:var(--ivory);border:1px solid rgba(31,77,69,0.15);padding:1rem;border-radius:6px;font-family:'Inter',sans-serif;font-size:1rem;color:var(--charcoal);transition:all .3s var(--ease);}
+.form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--forest);background:var(--white);}
+.form-row textarea{min-height:140px;resize:vertical;}.contact-form .btn{width:100%;justify-content:center;margin-top:.5rem;}
+.journal-article{display:none;padding:10rem 0 6rem;background:var(--white);}
+.journal-article.active{display:block;}.journal-header{max-width:900px;margin:0 auto 4rem;text-align:center;}
+.journal-header .tag{display:inline-block;font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:1.5rem;font-weight:600;}
+.journal-header h1{font-size:clamp(2.2rem,4vw,3.5rem);font-weight:500;line-height:1.15;letter-spacing:-0.025em;margin-bottom:2rem;}
+.journal-meta{color:var(--charcoal-light);font-size:.95rem;}
+.journal-content{max-width:760px;margin:0 auto;font-size:1.1rem;line-height:1.85;color:var(--charcoal);}
+.journal-content p{margin-bottom:1.8rem;}.journal-content h3{font-size:1.6rem;margin:3rem 0 1.2rem;font-weight:600;}
+.journal-image{width:100%;aspect-ratio:16/9;border-radius:8px;overflow:hidden;margin:2.5rem 0;}.journal-image img{width:100%;height:100%;object-fit:cover;}
+.back-btn{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:2rem;color:var(--forest);font-weight:500;}.back-btn:hover{color:var(--gold);}
+.back-btn svg{transition:transform .3s var(--ease);}.back-btn:hover svg{transform:translateX(-4px);}
+footer{background:var(--forest-dark);color:var(--ivory);padding:5rem 0 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(248,245,239,0.1);}
+.footer-brand .logo{color:var(--ivory);margin-bottom:1.5rem;}.footer-brand .logo img{filter:brightness(0) invert(1);}
 .footer-brand p{color:rgba(248,245,239,0.65);line-height:1.7;max-width:320px;font-size:.95rem;}
-.footer-col h4{
-  font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;
-  color:var(--gold);margin-bottom:1.3rem;font-weight:600;
-  font-family:'Inter',sans-serif;
-}
-.footer-col ul{list-style:none;}
-.footer-col li{margin-bottom:.7rem;}
-.footer-col a{color:rgba(248,245,239,0.75);font-size:.92rem;}
-.footer-col a:hover{color:var(--ivory);}
-.newsletter-form{
-  display:flex;gap:.5rem;margin-top:.5rem;
-  background:rgba(248,245,239,0.05);
-  padding:.3rem;border-radius:6px;
-  border:1px solid rgba(248,245,239,0.1);
-}
-.newsletter-form input{
-  flex:1;background:transparent;border:none;padding:.7rem 1rem;
-  color:var(--ivory);font-family:'Inter',sans-serif;font-size:.9rem;outline:none;
-}
+.footer-col h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:1.3rem;font-weight:600;font-family:'Inter',sans-serif;}
+.footer-col ul{list-style:none;}.footer-col li{margin-bottom:.7rem;}.footer-col a{color:rgba(248,245,239,0.75);font-size:.92rem;}.footer-col a:hover{color:var(--ivory);}
+.newsletter-form{display:flex;gap:.5rem;margin-top:.5rem;background:rgba(248,245,239,0.05);padding:.3rem;border-radius:6px;border:1px solid rgba(248,245,239,0.1);}
+.newsletter-form input{flex:1;background:transparent;border:none;padding:.7rem 1rem;color:var(--ivory);font-family:'Inter',sans-serif;font-size:.9rem;outline:none;}
 .newsletter-form input::placeholder{color:rgba(248,245,239,0.4);}
-.newsletter-form button{
-  background:var(--gold);color:var(--forest);
-  border:none;padding:.7rem 1.3rem;border-radius:4px;
-  font-weight:500;font-size:.85rem;cursor:pointer;
-  transition:background .3s var(--ease);
-}
+.newsletter-form button{background:var(--gold);color:var(--forest);border:none;padding:.7rem 1.3rem;border-radius:4px;font-weight:500;font-size:.85rem;cursor:pointer;transition:background .3s var(--ease);}
 .newsletter-form button:hover{background:#a07a3c;}
-
-.footer-bottom{
-  display:flex;justify-content:space-between;align-items:center;
-  padding-top:2rem;flex-wrap:wrap;gap:1rem;
-}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;flex-wrap:wrap;gap:1rem;}
 .footer-bottom p{color:rgba(248,245,239,0.5);font-size:.85rem;}
-.socials{display:flex;gap:1rem;}
-.socials a{
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(248,245,239,0.08);
-  display:flex;align-items:center;justify-content:center;
-  transition:all .3s var(--ease);
-}
+.socials{display:flex;gap:1rem;}.socials a{width:36px;height:36px;border-radius:50%;background:rgba(248,245,239,0.08);display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease);}
 .socials a:hover{background:var(--gold);color:var(--forest);}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-
-/* RESPONSIVE */
-@media (max-width:960px){
-  .nav-links{display:none;position:fixed;top:70px;left:0;right:0;background:var(--ivory);flex-direction:column;padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(31,77,69,0.1);}
-  .nav-links.open{display:flex;}
-  .nav-toggle{display:flex;}
-  .hero{padding:8rem 0 5rem;}
-  .hero-grid{grid-template-columns:1fr;gap:3rem;}
-  .trust-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem;}
-  .trust-item{border-right:none;}
-  .philosophy-grid{grid-template-columns:1fr;gap:3rem;}
-  .help-grid{grid-template-columns:1fr;gap:1rem;}
-  .solution-row{grid-template-columns:1fr;gap:2rem;}
-  .solution-detail{grid-template-columns:1fr;gap:1.5rem;}
-  .process-item{grid-template-columns:1fr;gap:1rem;}
-  .case-featured{grid-template-columns:1fr;gap:2.5rem;}
-  .insights-grid{grid-template-columns:1fr;gap:1.5rem;}
-  .ventures-card{grid-template-columns:1fr;gap:1.5rem;padding:2rem;}
-  .contact-grid{grid-template-columns:1fr;gap:3rem;}
-  .contact-form{padding:2rem;}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
-  section{padding:5rem 0;}
-  .container{padding:0 1.5rem;}
-}
-@media (max-width:560px){
-  .footer-grid{grid-template-columns:1fr;}
-  .footer-bottom{flex-direction:column;text-align:center;}
-  .hero h1{font-size:2.8rem;}
-}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);}.reveal.visible{opacity:1;transform:translateY(0);}
+@media (max-width:960px){.nav-links{display:none;position:fixed;top:70px;left:0;right:0;background:var(--ivory);flex-direction:column;padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(31,77,69,0.1);}.nav-links.open{display:flex;}.nav-toggle{display:flex;}.hero{padding:8rem 0 5rem;}.hero-grid{grid-template-columns:1fr;gap:3rem;}.trust-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem;}.trust-item{border-right:none;}.philosophy-grid{grid-template-columns:1fr;gap:3rem;}.help-grid{grid-template-columns:1fr;gap:1rem;}.solution-row{grid-template-columns:1fr;gap:2rem;}.solution-detail{grid-template-columns:1fr;gap:1.5rem;}.process-item{grid-template-columns:1fr;gap:1rem;}.case-featured{grid-template-columns:1fr;gap:2.5rem;}.insights-grid{grid-template-columns:1fr;gap:1.5rem;}.ventures-card{grid-template-columns:1fr;gap:1.5rem;padding:2rem;}.contact-grid{grid-template-columns:1fr;gap:3rem;}.contact-form{padding:2rem;}.footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}section{padding:5rem 0;}.container{padding:0 1.5rem;}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}.hero h1{font-size:2.8rem;}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="logo" onclick="showMain()">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%231F4D45' stroke-width='3'/%3E%3Cpath d='M50 20 Q70 20 70 50 Q70 80 50 80 Q30 80 30 50 Q30 20 50 20' fill='%231F4D45'/%3E%3Cpath d='M35 55 Q50 70 65 55' fill='none' stroke='%231F4D45' stroke-width='2'/%3E%3Cpath d='M35 55 Q25 45 35 35' fill='none' stroke='%231F4D45' stroke-width='2'/%3E%3Cpath d='M65 55 Q75 45 65 35' fill='none' stroke='%231F4D45' stroke-width='2'/%3E%3Ccircle cx='60' cy='35' r='8' fill='%23B68C4A'/%3E%3C/svg%3E" alt="EHANI Logo">
-    </a>
+    <a href="index.html" class="logo"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%231F4D45' stroke-width='3'/%3E%3Cpath d='M50 20 Q70 20 70 50 Q70 80 50 80 Q30 80 30 50 Q30 20 50 20' fill='%231F4D45'/%3E%3Cpath d='M35 55 Q50 70 65 55' fill='none' stroke='%231F4D45' stroke-width='2'/%3E%3Cpath d='M35 55 Q25 45 35 35' fill='none' stroke='%231F4D45' stroke-width='2'/%3E%3Cpath d='M65 55 Q75 45 65 35' fill='none' stroke='%231F4D45' stroke-width='2'/%3E%3Ccircle cx='60' cy='35' r='8' fill='%23B68C4A'/%3E%3C/svg%3E" alt="EHANI Logo"></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about" onclick="showMain()">About</a></li>
-      <li><a href="#solutions" onclick="showMain()">Solutions</a></li>
-      <li><a href="#process" onclick="showMain()">Process</a></li>
-      <li><a href="#work" onclick="showMain()">Work</a></li>
-      <li><a href="#insights" onclick="showMain()">Insights</a></li>
-      <li><a href="#ventures" onclick="showMain()">Ventures</a></li>
-      <li><a href="#contact" class="btn-nav" onclick="showMain()">Start a Project</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#insights">Insights</a></li>
+      <li><a href="contact.html" class="btn-nav">Start a Project</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- MAIN CONTENT -->
 <div id="mainContent">
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
@@ -636,38 +175,20 @@ footer{
         <h1>Building Tomorrow, <em>Thoughtfully.</em></h1>
         <p class="hero-sub">Helping African businesses uncover opportunity, strengthen their brands and build digital experiences that endure.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary" onclick="showMain();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100)">Start a Project
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#work" class="btn btn-secondary" onclick="showMain();setTimeout(()=>document.getElementById('work').scrollIntoView({behavior:'smooth'}),100)">Explore Our Work</a>
+          <a href="contact.html" class="btn btn-primary">Start a Project<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#work" class="btn btn-secondary">Explore Our Work</a>
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=900&q=80" alt="African professionals collaborating">
-        </div>
-        <div class="hero-float f1">
-          <div>
-            <div class="hero-float-label">Serving</div>
-            <div class="hero-float-value">9 Sectors</div>
-          </div>
-        </div>
-        <div class="hero-float f2">
-          <div>
-            <div class="hero-float-label">Built for</div>
-            <div class="hero-float-value">Generations</div>
-          </div>
-        </div>
+        <div class="hero-image"><img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=900&q=80" alt="African professionals collaborating"></div>
+        <div class="hero-float f1"><div><div class="hero-float-label">Serving</div><div class="hero-float-value">9 Sectors</div></div></div>
+        <div class="hero-float f2"><div><div class="hero-float-label">Built for</div><div class="hero-float-value">Generations</div></div></div>
       </div>
     </div>
   </div>
-  <div class="scroll-indicator">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
-<!-- TRUST BANNER -->
 <section class="trust" style="padding:5rem 0;">
   <div class="container">
     <div class="trust-grid">
@@ -680,7 +201,6 @@ footer{
   </div>
 </section>
 
-<!-- PHILOSOPHY / ABOUT -->
 <section class="philosophy" id="about">
   <div class="container">
     <div class="philosophy-grid">
@@ -688,25 +208,16 @@ footer{
         <div class="eyebrow reveal">The Ehani Philosophy</div>
         <h2 class="section-title reveal">We believe the greatest opportunities are often overlooked.</h2>
         <p class="section-subtitle reveal">EHANI exists because remarkable African businesses often remain invisible — not because they lack excellence, but because they lack the digital presence to reflect it.</p>
-        <blockquote class="philosophy-quote reveal">
-          "We believe the greatest opportunities are often overlooked. Our work is to uncover them, build them with integrity, and leave them stronger than we found them."
-        </blockquote>
+        <blockquote class="philosophy-quote reveal">"We believe the greatest opportunities are often overlooked. Our work is to uncover them, build them with integrity, and leave them stronger than we found them."</blockquote>
       </div>
-      <div class="philosophy-image reveal">
-        <img src="https://images.unsplash.com/photo-1542810634-72275c5e607c?auto=format&fit=crop&w=900&q=80" alt="African architecture">
-      </div>
+      <div class="philosophy-image reveal"><img src="https://images.unsplash.com/photo-1542810634-72275c5e607c?auto=format&fit=crop&w=900&q=80" alt="African architecture"></div>
     </div>
   </div>
 </section>
 
-<!-- WHO WE HELP -->
 <section class="help">
   <div class="container">
-    <div class="reveal">
-      <div class="eyebrow">Who We Serve</div>
-      <h2 class="section-title">Industries we build for.</h2>
-      <p class="section-subtitle">Across Africa, we partner with organizations whose work matters — and help them reach further.</p>
-    </div>
+    <div class="reveal"><div class="eyebrow">Who We Serve</div><h2 class="section-title">Industries we build for.</h2><p class="section-subtitle">Across Africa, we partner with organizations whose work matters — and help them reach further.</p></div>
     <div class="help-grid">
       <div class="help-card reveal"><h3>Hotels & Resorts</h3><p>Hospitality brands ready to compete on a global stage.</p></div>
       <div class="help-card reveal"><h3>Schools</h3><p>Institutions shaping the next generation, thoughtfully.</p></div>
@@ -721,514 +232,106 @@ footer{
   </div>
 </section>
 
-<!-- SOLUTIONS -->
-<section class="solutions" id="solutions">
-  <div class="container">
-    <div class="reveal">
-      <div class="eyebrow">Our Solutions</div>
-      <h2 class="section-title">Four disciplines, one purpose.</h2>
-      <p class="section-subtitle">Every engagement is structured around what the client faces, how we think about it, and the outcome we are accountable to.</p>
-    </div>
-
-    <div class="solution-row reveal">
-      <div>
-        <span class="num">— 01</span>
-        <h3>Website Design</h3>
-      </div>
-      <div class="solution-detail">
-        <div class="solution-detail-block"><h4>Challenge</h4><p>A digital presence that doesn't reflect the quality of the business behind it.</p></div>
-        <div class="solution-detail-block"><h4>Approach</h4><p>Editorial, human-centered design built around clarity, speed and trust.</p></div>
-        <div class="solution-detail-block"><h4>Outcome</h4><p>A website that works as a senior member of your team, not a brochure.</p></div>
-      </div>
-    </div>
-
-    <div class="solution-row reveal">
-      <div>
-        <span class="num">— 02</span>
-        <h3>Digital Branding</h3>
-      </div>
-      <div class="solution-detail">
-        <div class="solution-detail-block"><h4>Challenge</h4><p>A brand that feels borrowed, generic or disconnected from its audience.</p></div>
-        <div class="solution-detail-block"><h4>Approach</h4><p>We begin with strategy before touching a single pixel — identity built on meaning.</p></div>
-        <div class="solution-detail-block"><h4>Outcome</h4><p>A brand system you will still be proud of in ten years.</p></div>
-      </div>
-    </div>
-
-    <div class="solution-row reveal">
-      <div>
-        <span class="num">— 03</span>
-        <h3>AI Business Solutions</h3>
-      </div>
-      <div class="solution-detail">
-        <div class="solution-detail-block"><h4>Challenge</h4><p>Teams spending hours on work that machines can now shoulder.</p></div>
-        <div class="solution-detail-block"><h4>Approach</h4><p>Pragmatic AI applied to real workflows — not experimentation for its own sake.</p></div>
-        <div class="solution-detail-block"><h4>Outcome</h4><p>Measurable time recovered and decisions made with sharper clarity.</p></div>
-      </div>
-    </div>
-
-    <div class="solution-row reveal">
-      <div>
-        <span class="num">— 04</span>
-        <h3>IT Consulting</h3>
-      </div>
-      <div class="solution-detail">
-        <div class="solution-detail-block"><h4>Challenge</h4><p>Technology decisions made in reaction, rather than with foresight.</p></div>
-        <div class="solution-detail-block"><h4>Approach</h4><p>A clear technology roadmap aligned to where the business is actually going.</p></div>
-        <div class="solution-detail-block"><h4>Outcome</h4><p>Systems that scale with the business, not ones that constrain it.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
 <section class="process" id="process">
   <div class="container">
-    <div class="reveal">
-      <div class="eyebrow">Our Process</div>
-      <h2 class="section-title">How we work with you.</h2>
-      <p class="section-subtitle">A structured, unhurried journey from first conversation to lasting partnership.</p>
-    </div>
-
+    <div class="reveal"><div class="eyebrow">Our Process</div><h2 class="section-title">How we work with you.</h2><p class="section-subtitle">A structured, unhurried journey from first conversation to lasting partnership.</p></div>
     <div class="process-list">
-      <div class="process-item reveal">
-        <div class="step">— 01</div>
-        <h3>Discovery</h3>
-        <p>We begin by listening. We sit with you, understand your business, your audience and the challenges that aren't always obvious. No assumptions, no templates.</p>
-      </div>
-      <div class="process-item reveal">
-        <div class="step">— 02</div>
-        <h3>Strategy</h3>
-        <p>From discovery we build a strategic foundation — the decisions that will govern every design and development choice that follows. This is where most projects fail, and where we invest most.</p>
-      </div>
-      <div class="process-item reveal">
-        <div class="step">— 03</div>
-        <h3>Design</h3>
-        <p>Only then do we design. Every element carries intention. Nothing decorative for its own sake. We iterate with you until the work feels inevitable.</p>
-      </div>
-      <div class="process-item reveal">
-        <div class="step">— 04</div>
-        <h3>Development</h3>
-        <p>We build with the same care we designed with — performant, accessible, maintainable. Technology serves the work, never the other way around.</p>
-      </div>
-      <div class="process-item reveal">
-        <div class="step">— 05</div>
-        <h3>Launch</h3>
-        <p>A considered launch, not a rushed one. We prepare you, your team and the market. Then we release it into the world with confidence.</p>
-      </div>
-      <div class="process-item reveal">
-        <div class="step">— 06</div>
-        <h3>Support</h3>
-        <p>Launch is a beginning. We remain your partner — refining, evolving, and making sure what we built continues to serve you for years to come.</p>
-      </div>
+      <div class="process-item reveal"><div class="step">— 01</div><h3>Discovery</h3><p>We begin by listening. We sit with you, understand your business, your audience and the challenges that aren't always obvious. No assumptions, no templates.</p></div>
+      <div class="process-item reveal"><div class="step">— 02</div><h3>Strategy</h3><p>From discovery we build a strategic foundation — the decisions that will govern every design and development choice that follows. This is where most projects fail, and where we invest most.</p></div>
+      <div class="process-item reveal"><div class="step">— 03</div><h3>Design</h3><p>Only then do we design. Every element carries intention. Nothing decorative for its own sake. We iterate with you until the work feels inevitable.</p></div>
+      <div class="process-item reveal"><div class="step">— 04</div><h3>Development</h3><p>We build with the same care we designed with — performant, accessible, maintainable. Technology serves the work, never the other way around.</p></div>
+      <div class="process-item reveal"><div class="step">— 05</div><h3>Launch</h3><p>A considered launch, not a rushed one. We prepare you, your team and the market. Then we release it into the world with confidence.</p></div>
+      <div class="process-item reveal"><div class="step">— 06</div><h3>Support</h3><p>Launch is a beginning. We remain your partner — refining, evolving, and making sure what we built continues to serve you for years to come.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CASE STUDIES -->
 <section class="case" id="work">
   <div class="container">
-    <div class="reveal">
-      <div class="eyebrow">Selected Work</div>
-      <h2 class="section-title">Featured project.</h2>
-    </div>
-
+    <div class="reveal"><div class="eyebrow">Selected Work</div><h2 class="section-title">Featured project.</h2></div>
     <div class="case-featured">
-      <div class="case-image reveal">
-        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Educational institution">
-      </div>
+      <div class="case-image reveal"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Educational institution"></div>
       <div class="reveal">
         <span class="case-tag">Education · Featured</span>
         <h3>A leading educational institution, reimagined for the next decade.</h3>
-
-        <div class="case-section">
-          <h5>The Challenge</h5>
-          <p>An established school with a strong reputation but a digital presence that no longer reflected the quality of the institution or the expectations of modern families.</p>
-        </div>
-        <div class="case-section">
-          <h5>Our Thinking</h5>
-          <p>A school's website is its front door. It should welcome, inform and reassure — long before a family visits. We treated the project as an institutional publication, not a brochure.</p>
-        </div>
-        <div class="case-section">
-          <h5>The Solution</h5>
-          <p>A considered, editorial website with clear architecture, calm typography and a structure designed to grow with the institution for years.</p>
-        </div>
-        <div class="case-section">
-          <h5>Expected Impact</h5>
-          <p>Stronger brand positioning, a clearer admissions journey, and a platform the school can own, update and build on independently.</p>
-        </div>
-
-        <a href="#contact" class="btn btn-primary" style="margin-top:1rem;" onclick="showMain();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100)">Discuss a similar project
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="case-section"><h5>The Challenge</h5><p>An established school with a strong reputation but a digital presence that no longer reflected the quality of the institution or the expectations of modern families.</p></div>
+        <div class="case-section"><h5>Our Thinking</h5><p>A school's website is its front door. It should welcome, inform and reassure — long before a family visits. We treated the project as an institutional publication, not a brochure.</p></div>
+        <div class="case-section"><h5>The Solution</h5><p>A considered, editorial website with clear architecture, calm typography and a structure designed to grow with the institution for years.</p></div>
+        <div class="case-section"><h5>Expected Impact</h5><p>Stronger brand positioning, a clearer admissions journey, and a platform the school can own, update and build on independently.</p></div>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:1rem;">Discuss a similar project<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INSIGHTS -->
 <section class="insights" id="insights">
   <div class="container">
-    <div class="reveal">
-      <div class="eyebrow">Journal</div>
-      <h2 class="section-title">Insights.</h2>
-      <p class="section-subtitle">Reflections on strategy, technology and the quiet craft of building things that endure.</p>
-    </div>
-
+    <div class="reveal"><div class="eyebrow">Journal</div><h2 class="section-title">Insights.</h2><p class="section-subtitle">Reflections on strategy, technology and the quiet craft of building things that endure.</p></div>
     <div class="insights-grid">
-      <article class="insight-card reveal" onclick="showArticle('hospitality')">
-        <div class="insight-image">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="Hospitality">
-        </div>
-        <div class="insight-body">
-          <span class="tag">Hospitality</span>
-          <h4>What makes a hotel's website worthy of the rooms behind it.</h4>
-          <span class="read">Read essay →</span>
-        </div>
-      </article>
-
-      <article class="insight-card reveal" onclick="showArticle('digital-strategy')">
-        <div class="insight-image">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80" alt="Digital strategy">
-        </div>
-        <div class="insight-body">
-          <span class="tag">Digital Strategy</span>
-          <h4>Why most digital transformations fail before they begin.</h4>
-          <span class="read">Read essay →</span>
-        </div>
-      </article>
-
-      <article class="insight-card reveal" onclick="showArticle('ai')">
-        <div class="insight-image">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=700&q=80" alt="AI and coding">
-        </div>
-        <div class="insight-body">
-          <span class="tag">AI</span>
-          <h4>AI is not a strategy. It is an instrument.</h4>
-          <span class="read">Read essay →</span>
-        </div>
-      </article>
+      <article class="insight-card reveal" onclick="showArticle('hospitality')"><div class="insight-image"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="Hospitality"></div><div class="insight-body"><span class="tag">Hospitality</span><h4>What makes a hotel's website worthy of the rooms behind it.</h4><span class="read">Read essay →</span></div></article>
+      <article class="insight-card reveal" onclick="showArticle('digital-strategy')"><div class="insight-image"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80" alt="Digital strategy"></div><div class="insight-body"><span class="tag">Digital Strategy</span><h4>Why most digital transformations fail before they begin.</h4><span class="read">Read essay →</span></div></article>
+      <article class="insight-card reveal" onclick="showArticle('ai')"><div class="insight-image"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=700&q=80" alt="AI and coding"></div><div class="insight-body"><span class="tag">AI</span><h4>AI is not a strategy. It is an instrument.</h4><span class="read">Read essay →</span></div></article>
     </div>
   </div>
 </section>
 
-<!-- VENTURES -->
 <section class="ventures" id="ventures">
   <div class="container">
-    <div class="reveal ventures-intro">
-      <div class="eyebrow">Ehani Ventures</div>
-      <h2 class="section-title">Beyond consultancy.</h2>
-      <p class="section-subtitle">Alongside our client work, we develop our own technology ventures — solving African problems with patient capital and careful craft.</p>
-    </div>
-
-    <div class="ventures-card reveal">
-      <div>
-        <h3>VESTA</h3>
-        <p>A student housing platform connecting students with verified accommodation near universities, colleges and TVET institutions across Kenya. Built on the belief that safe, dignified housing is not a luxury — it is the foundation of a serious education.</p>
-      </div>
-      <div class="ventures-status">Currently in development</div>
-    </div>
+    <div class="reveal ventures-intro"><div class="eyebrow">Ehani Ventures</div><h2 class="section-title">Beyond consultancy.</h2><p class="section-subtitle">Alongside our client work, we develop our own technology ventures — solving African problems with patient capital and careful craft.</p></div>
+    <div class="ventures-card reveal"><div><h3>VESTA</h3><p>A student housing platform connecting students with verified accommodation near universities, colleges and TVET institutions across Kenya. Built on the belief that safe, dignified housing is not a luxury — it is the foundation of a serious education.</p></div><div class="ventures-status">Currently in development</div></div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
   <div class="container">
     <h2 class="reveal">A quieter kind of partnership.</h2>
     <p class="reveal">If you are building something that matters and you'd like a partner who thinks in years, not quarters — we should talk.</p>
     <div class="cta-buttons reveal">
-      <a href="#contact" class="btn btn-gold" onclick="showMain();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100)">Start a conversation
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#work" class="btn btn-ghost" onclick="showMain();setTimeout(()=>document.getElementById('work').scrollIntoView({behavior:'smooth'}),100)">See our work</a>
+      <a href="contact.html" class="btn btn-gold">Start a conversation<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#work" class="btn btn-ghost">See our work</a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="reveal">
-      <div class="eyebrow">Contact</div>
-      <h2 class="section-title">Begin the conversation.</h2>
-      <p class="section-subtitle">Tell us what you are building. We read every message personally and reply within two working days.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <h3>Reach us directly.</h3>
-
-        <a href="tel:+254710236242" class="contact-line">
-          <span class="contact-line-label">Telephone</span>
-          <span class="contact-line-value">+254 710 236 242</span>
-        </a>
-        <a href="mailto:ososolarry21@gmail.com" class="contact-line">
-          <span class="contact-line-label">Email</span>
-          <span class="contact-line-value">ososolarry21@gmail.com</span>
-        </a>
-        <div class="contact-line">
-          <span class="contact-line-label">LinkedIn</span>
-          <span class="contact-line-value muted">Coming soon</span>
-        </div>
-        <div class="contact-line">
-          <span class="contact-line-label">Facebook</span>
-          <span class="contact-line-value muted">Coming soon</span>
-        </div>
-        <div class="contact-line">
-          <span class="contact-line-label">Instagram</span>
-          <span class="contact-line-value muted">Coming soon</span>
-        </div>
-      </div>
-
-      <form class="contact-form reveal" onsubmit="event.preventDefault();this.querySelector('button').innerText='Thank you. We\'ll be in touch.';this.reset();">
-        <div class="form-row">
-          <label>Your name</label>
-          <input type="text" required placeholder="Jane Wanjiru">
-        </div>
-        <div class="form-row">
-          <label>Email</label>
-          <input type="email" required placeholder="jane@company.com">
-        </div>
-        <div class="form-row">
-          <label>Organization</label>
-          <input type="text" placeholder="Company or institution">
-        </div>
-        <div class="form-row">
-          <label>How can we help?</label>
-          <textarea required placeholder="Tell us briefly what you are building or considering..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send message
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- JOURNAL ARTICLES -->
 <article class="journal-article" id="article-hospitality">
-  <div class="container">
-    <div class="journal-header">
-      <a class="back-btn" onclick="showMain()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Back to insights
-      </a>
-      <span class="tag">Hospitality</span>
-      <h1>What Makes a Hotel's Website Worthy of the Rooms Behind It?</h1>
-      <div class="journal-meta">An EHANI Perspective</div>
-    </div>
-    
-    <div class="journal-content">
-      <p>Hospitality has always been built on first impressions. Long before a guest enters the reception area, they have already formed an opinion. Today, that first impression is rarely created at the front desk. It begins online.</p>
-      
-      <p>Many hotels invest heavily in architecture, interiors and guest experience while treating their websites as an afterthought. The result is a digital presence that fails to reflect the quality waiting behind the front door.</p>
-      
-      <p>A hotel's website should never function as an online brochure. It should recreate the confidence a guest feels when they walk into the property.</p>
-      
-      <div class="journal-image">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" alt="Luxury hotel interior">
-      </div>
-      
-      <h3>Good hospitality websites tell stories.</h3>
-      <p>They communicate atmosphere. They guide visitors naturally towards booking. Most importantly, they remove uncertainty.</p>
-      
-      <p>Guests should immediately understand: Where the hotel is located. What experience it offers. Which rooms are available. How to reserve. Why they should choose it over alternatives.</p>
-      
-      <p>Photography plays a critical role. Authentic images outperform heavily edited promotional photographs because they build trust.</p>
-      
-      <p>Navigation should be simple. Information should be easy to find. Loading speeds should be fast. Every interaction should reassure potential guests that the same attention to detail exists throughout the property.</p>
-      
-      <p>The website should become an extension of the hotel's hospitality rather than merely its advertisement.</p>
-      
-      <h3>Luxury begins long before check-in.</h3>
-      <p>It begins the moment someone opens the homepage.</p>
-      
-      <p>At EHANI, we believe a hotel's website should honour the experience created by the people behind it. When those two experiences become aligned, trust follows naturally. And trust is often what turns a visitor into a guest.</p>
-      
-      <h3>Final Thought</h3>
-      <p>The best hotel websites do not simply showcase rooms. They invite people into an experience.</p>
-    </div>
+  <div class="container"><div class="journal-header"><a class="back-btn" onclick="showMain()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to insights</a><span class="tag">Hospitality</span><h1>What Makes a Hotel's Website Worthy of the Rooms Behind It?</h1><div class="journal-meta">An EHANI Perspective</div></div>
+    <div class="journal-content"><p>Hospitality has always been built on first impressions. Long before a guest enters the reception area, they have already formed an opinion. Today, that first impression is rarely created at the front desk. It begins online.</p><p>Many hotels invest heavily in architecture, interiors and guest experience while treating their websites as an afterthought. The result is a digital presence that fails to reflect the quality waiting behind the front door.</p><p>A hotel's website should never function as an online brochure. It should recreate the confidence a guest feels when they walk into the property.</p><div class="journal-image"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" alt="Luxury hotel interior"></div><h3>Good hospitality websites tell stories.</h3><p>They communicate atmosphere. They guide visitors naturally towards booking. Most importantly, they remove uncertainty. Guests should immediately understand: Where the hotel is located. What experience it offers. Which rooms are available. How to reserve. Why they should choose it over alternatives.</p><p>Photography plays a critical role. Authentic images outperform heavily edited promotional photographs because they build trust. Navigation should be simple. Information should be easy to find. Loading speeds should be fast. Every interaction should reassure potential guests that the same attention to detail exists throughout the property.</p><p>The website should become an extension of the hotel's hospitality rather than merely its advertisement. Luxury begins long before check-in. It begins the moment someone opens the homepage.</p><p>At EHANI, we believe a hotel's website should honour the experience created by the people behind it. When those two experiences become aligned, trust follows naturally. And trust is often what turns a visitor into a guest.</p><h3>Final Thought</h3><p>The best hotel websites do not simply showcase rooms. They invite people into an experience.</p></div>
   </div>
 </article>
 
 <article class="journal-article" id="article-digital-strategy">
-  <div class="container">
-    <div class="journal-header">
-      <a class="back-btn" onclick="showMain()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Back to insights
-      </a>
-      <span class="tag">Digital Strategy</span>
-      <h1>Why Most Digital Transformations Fail Before They Begin</h1>
-      <div class="journal-meta">An EHANI Perspective</div>
-    </div>
-    
-    <div class="journal-content">
-      <p>Digital transformation has become one of the most frequently used phrases in modern business. Every week, another company announces a transformation initiative. New software is purchased. Consultants are hired. Systems are replaced. Dashboards appear. Artificial intelligence is introduced into conversations.</p>
-      
-      <p>Yet many of these initiatives quietly fail. Not because the technology was poor. But because transformation was mistaken for technology.</p>
-      
-      <p>Technology has never transformed a business on its own. People do.</p>
-      
-      <div class="journal-image">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Business strategy meeting">
-      </div>
-      
-      <h3>Businesses often begin by asking the wrong question:</h3>
-      <p>"What software should we buy?"</p>
-      
-      <p>The better question is: "What problem are we trying to solve?"</p>
-      
-      <p>The distinction matters. A hotel with declining bookings does not necessarily need a new reservation platform. A school struggling to attract students may not need a redesigned website. An agricultural cooperative experiencing poor communication may not require another messaging application.</p>
-      
-      <p>Without understanding the underlying challenge, technology simply accelerates existing inefficiencies.</p>
-      
-      <h3>Digital transformation should begin with observation rather than implementation.</h3>
-      <p>What slows your organisation down? Where is trust being lost? Which processes frustrate customers? What decisions consume unnecessary time?</p>
-      
-      <p>Only after those questions have been answered should technology enter the conversation.</p>
-      
-      <p>At EHANI, we believe digital transformation begins with understanding businesses before recommending systems. Technology is the instrument. Business improvement is the objective.</p>
-      
-      <p>The organisations that succeed are rarely those that adopt the most technology. They are the ones that adopt the right technology for the right reasons.</p>
-      
-      <h3>Transformation is not something software delivers.</h3>
-      <p>It is something leadership creates. Technology simply helps make it possible.</p>
-      
-      <h3>Final Thought</h3>
-      <p>Every successful transformation starts with a conversation, not a purchase.</p>
-    </div>
+  <div class="container"><div class="journal-header"><a class="back-btn" onclick="showMain()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to insights</a><span class="tag">Digital Strategy</span><h1>Why Most Digital Transformations Fail Before They Begin</h1><div class="journal-meta">An EHANI Perspective</div></div>
+    <div class="journal-content"><p>Digital transformation has become one of the most frequently used phrases in modern business. Every week, another company announces a transformation initiative. New software is purchased. Consultants are hired. Systems are replaced. Dashboards appear. Artificial intelligence is introduced into conversations.</p><p>Yet many of these initiatives quietly fail. Not because the technology was poor. But because transformation was mistaken for technology. Technology has never transformed a business on its own. People do.</p><p>Businesses often begin by asking the wrong question: "What software should we buy?" The better question is: "What problem are we trying to solve?" The distinction matters. A hotel with declining bookings does not necessarily need a new reservation platform. A school struggling to attract students may not need a redesigned website. An agricultural cooperative experiencing poor communication may not require another messaging application.</p><p>Without understanding the underlying challenge, technology simply accelerates existing inefficiencies. Digital transformation should begin with observation rather than implementation. What slows your organisation down? Where is trust being lost? Which processes frustrate customers? What decisions consume unnecessary time?</p><p>Only after those questions have been answered should technology enter the conversation. At EHANI, we believe digital transformation begins with understanding businesses before recommending systems. Technology is the instrument. Business improvement is the objective.</p><p>The organisations that succeed are rarely those that adopt the most technology. They are the ones that adopt the right technology for the right reasons. Transformation is not something software delivers. It is something leadership creates. Technology simply helps make it possible.</p><h3>Final Thought</h3><p>Every successful transformation starts with a conversation, not a purchase.</p></div>
   </div>
 </article>
 
 <article class="journal-article" id="article-ai">
-  <div class="container">
-    <div class="journal-header">
-      <a class="back-btn" onclick="showMain()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Back to insights
-      </a>
-      <span class="tag">Artificial Intelligence</span>
-      <h1>AI Is Not a Strategy. It Is an Instrument.</h1>
-      <div class="journal-meta">An EHANI Perspective</div>
-    </div>
-    
-    <div class="journal-content">
-      <p>Artificial intelligence has become today's favourite business buzzword. Every company seems eager to announce an AI initiative. Every software platform now promises AI-powered features. Every conference speaks about the future.</p>
-      
-      <p>Yet many organisations remain unsure of a simple question: "Why are we using AI?"</p>
-      
-      <p>Artificial intelligence should never become the strategy itself. It is simply another business tool.</p>
-      
-      <div class="journal-image">
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" alt="Computer with code on screen">
-      </div>
-      
-      <h3>A hammer is useful because someone knows what they are building.</h3>
-      <p>Artificial intelligence is no different. Introducing AI into a business without understanding its purpose often creates complexity rather than clarity.</p>
-      
-      <p>Before asking, "How can AI help us?" leaders should first ask, "What work repeatedly slows our people down?"</p>
-      
-      <p>Perhaps customer enquiries consume too much staff time. Perhaps reports require hours to prepare. Perhaps appointments are difficult to manage.</p>
-      
-      <p>Those are business problems. Artificial intelligence may provide elegant solutions. But only after the problems have been clearly defined.</p>
-      
-      <h3>Businesses that begin with technology often become overwhelmed.</h3>
-      <p>Businesses that begin with purpose usually discover that technology naturally follows.</p>
-      
-      <p>At EHANI, we view AI as one instrument among many. Sometimes it is the right solution. Sometimes a simple spreadsheet, a better website, or clearer communication achieves more.</p>
-      
-      <p>Wisdom is knowing the difference.</p>
-      
-      <h3>Technology should serve people. Never the other way around.</h3>
-      
-      <h3>Final Thought</h3>
-      <p>Artificial intelligence should never replace thoughtful leadership. It should amplify it.</p>
-    </div>
+  <div class="container"><div class="journal-header"><a class="back-btn" onclick="showMain()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to insights</a><span class="tag">Artificial Intelligence</span><h1>AI Is Not a Strategy. It Is an Instrument.</h1><div class="journal-meta">An EHANI Perspective</div></div>
+    <div class="journal-content"><p>Artificial intelligence has become today's favourite business buzzword. Every company seems eager to announce an AI initiative. Every software platform now promises AI-powered features. Every conference speaks about the future.</p><p>Yet many organisations remain unsure of a simple question: "Why are we using AI?" Artificial intelligence should never become the strategy itself. It is simply another business tool.</p><p>A hammer is useful because someone knows what they are building. Artificial intelligence is no different. Introducing AI into a business without understanding its purpose often creates complexity rather than clarity. Before asking, "How can AI help us?" leaders should first ask, "What work repeatedly slows our people down?"</p><p>Perhaps customer enquiries consume too much staff time. Perhaps reports require hours to prepare. Perhaps appointments are difficult to manage. Those are business problems. Artificial intelligence may provide elegant solutions. But only after the problems have been clearly defined.</p><p>Businesses that begin with technology often become overwhelmed. Businesses that begin with purpose usually discover that technology naturally follows. At EHANI, we view AI as one instrument among many. Sometimes it is the right solution. Sometimes a simple spreadsheet, a better website, or clearer communication achieves more. Wisdom is knowing the difference.</p><p>Technology should serve people. Never the other way around.</p><h3>Final Thought</h3><p>Artificial intelligence should never replace thoughtful leadership. It should amplify it.</p></div>
   </div>
 </article>
+</div>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo" onclick="showMain()"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%231F4D45' stroke-width='3'/%3E%3Cpath d='M50 20 Q70 20 70 50 Q70 80 50 80 Q30 80 30 50 Q30 20 50 20' fill='%23F8F5EF'/%3E%3Cpath d='M35 55 Q50 70 65 55' fill='none' stroke='%23F8F5EF' stroke-width='2'/%3E%3Cpath d='M35 55 Q25 45 35 35' fill='none' stroke='%23F8F5EF' stroke-width='2'/%3E%3Cpath d='M65 55 Q75 45 65 35' fill='none' stroke='%23F8F5EF' stroke-width='2'/%3E%3Ccircle cx='60' cy='35' r='8' fill='%23B68C4A'/%3E%3C/svg%3E" alt="EHANI" style="width:45px;height:45px;">EHANI</a>
-        <p>Helping African businesses realize their full potential through thoughtful digital solutions that create lasting value.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="#about" onclick="showMain()">About</a></li>
-          <li><a href="#solutions" onclick="showMain()">Solutions</a></li>
-          <li><a href="#process" onclick="showMain()">Process</a></li>
-          <li><a href="#work" onclick="showMain()">Case Studies</a></li>
-          <li><a href="#insights" onclick="showMain()">Insights</a></li>
-          <li><a href="#ventures" onclick="showMain()">Ventures</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+254710236242">+254 710 236 242</a></li>
-          <li><a href="mailto:ososolarry21@gmail.com">ososolarry21@gmail.com</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
-        <p style="color:rgba(248,245,239,0.65);font-size:.9rem;margin-bottom:1rem;">Occasional essays on business, craft and the long view.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('button').innerText='Subscribed';this.reset();">
-          <input type="email" placeholder="Your email" required>
-          <button type="submit">Join</button>
-        </form>
-      </div>
+      <div class="footer-brand"><a href="index.html" class="logo"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%231F4D45' stroke-width='3'/%3E%3Cpath d='M50 20 Q70 20 70 50 Q70 80 50 80 Q30 80 30 50 Q30 20 50 20' fill='%23F8F5EF'/%3E%3Cpath d='M35 55 Q50 70 65 55' fill='none' stroke='%23F8F5EF' stroke-width='2'/%3E%3Cpath d='M35 55 Q25 45 35 35' fill='none' stroke='%23F8F5EF' stroke-width='2'/%3E%3Cpath d='M65 55 Q75 45 65 35' fill='none' stroke='%23F8F5EF' stroke-width='2'/%3E%3Ccircle cx='60' cy='35' r='8' fill='%23B68C4A'/%3E%3C/svg%3E" alt="EHANI" style="width:45px;height:45px;">EHANI</a><p>Helping African businesses realize their full potential through thoughtful digital solutions that create lasting value.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="about.html">About</a></li><li><a href="services.html">Solutions</a></li><li><a href="index.html#process">Process</a></li><li><a href="index.html#work">Case Studies</a></li><li><a href="index.html#insights">Insights</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+254710236242">+254 710 236 242</a></li><li><a href="mailto:ososolarry21@gmail.com">ososolarry21@gmail.com</a></li></ul></div>
+      <div class="footer-col"><h4>Newsletter</h4><p style="color:rgba(248,245,239,0.65);font-size:.9rem;margin-bottom:1rem;">Occasional essays on business, craft and the long view.</p><form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('button').innerText='Subscribed';this.reset();"><input type="email" placeholder="Your email" required><button type="submit">Join</button></form></div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 EHANI. Built with integrity, for generations.</p>
-      <div class="socials">
-        <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-        <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-      </div>
-    </div>
+    <div class="footer-bottom"><p>© 2026 EHANI. Built with integrity, for generations.</p><div class="socials"><a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div>
   </div>
 </footer>
 
 <script>
-// Sticky nav
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>30);});
-
-// Mobile menu
-document.getElementById('navToggle').addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.toggle('open');
-});
-document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.remove('open');
-}));
-
-// Reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
-}),{threshold:0.12});
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>30);});
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Show main content
-function showMain(){
-  document.getElementById('mainContent').style.display='block';
-  document.querySelectorAll('.journal-article').forEach(a=>a.classList.remove('active'));
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-// Show specific article
-function showArticle(articleId){
-  document.getElementById('mainContent').style.display='none';
-  document.querySelectorAll('.journal-article').forEach(a=>a.classList.remove('active'));
-  document.getElementById('article-'+articleId).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+function showMain(){document.getElementById('mainContent').style.display='block';document.querySelectorAll('.journal-article').forEach(a=>a.classList.remove('active'));window.scrollTo({top:0,behavior:'smooth'});}
+function showArticle(articleId){document.getElementById('mainContent').style.display='none';document.querySelectorAll('.journal-article').forEach(a=>a.classList.remove('active'));document.getElementById('article-'+articleId).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
 </script>
-
 </body>
 </html>
