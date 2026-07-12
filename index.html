@@ -413,13 +413,27 @@ footer{background:var(--forest-dark);color:var(--ivory);padding:5rem 0 2rem;}
   <a href="https://web.facebook.com/profile.php?id=61591452047901" target="_blank" class="contact-line"><span class="contact-line-label">Facebook</span><span class="contact-line-value">Ehani Group</span></a>
   <a href="https://x.com/ehanigroup" target="_blank" class="contact-line"><span class="contact-line-label">X (Twitter)</span><span class="contact-line-value">Ehani Group</span></a>
 </div>
-         <form class="contact-form reveal" action="https://formspree.io/f/mlgqrbjn" method="POST">
-        <div class="form-row"><label>Your name</label><input type="text" required placeholder="Jane Wanjiru"></div>
-        <div class="form-row"><label>Email</label><input type="email" required placeholder="jane@company.com"></div>
-        <div class="form-row"><label>Organization</label><input type="text" placeholder="Company or institution"></div>
-        <div class="form-row"><label>How can we help?</label><textarea required placeholder="Tell us briefly what you are building or considering..."></textarea></div>
-        <button type="submit" class="btn btn-primary">Send message<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </form>
+       <form class="contact-form reveal" action="https://formspree.io/f/mlgqrbjn" method="POST">
+  <div class="form-row">
+    <label>Your name</label>
+    <input type="text" name="name" required placeholder="Jane Wanjiru">
+  </div>
+  <div class="form-row">
+    <label>Email</label>
+    <input type="email" name="email" required placeholder="jane@company.com">
+  </div>
+  <div class="form-row">
+    <label>Organization</label>
+    <input type="text" name="organization" placeholder="Company or institution">
+  </div>
+  <div class="form-row">
+    <label>How can we help?</label>
+    <textarea name="message" required placeholder="Tell us briefly what you are building or considering..."></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send message
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</form>
     </div>
   </div>
 </section>
