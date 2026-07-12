@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — EHANI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1F4D45;--forest-dark:#153832;--ivory:#F8F5EF;--gold:#B68C4A;--charcoal:#333333;--charcoal-light:#5a5a5a;--white:#FFFFFF;--ease:cubic-bezier(0.4,0,0.2,1);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;font-weight:400;color:var(--charcoal);background:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Manrope',sans-serif;font-weight:600;color:var(--forest);letter-spacing:-0.02em;}
+.container{max-width:1400px;margin:0 auto;padding:0 2.5rem;}
+.nav{background:rgba(248,245,239,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(31,77,69,0.08);}
+.nav-inner{display:flex;align-items:center;padding:1.4rem 2.5rem;max-width:1400px;margin:0 auto;}
+.logo{display:flex;align-items:center;gap:.8rem;font-family:'Manrope',sans-serif;font-weight:700;font-size:1.4rem;color:var(--forest);}
+.logo img{width:45px;height:45px;}
+.thank-you-section{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 0;}
+.thank-you-content{max-width:700px;}
+.thank-you-content .icon{width:80px;height:80px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;color:var(--ivory);}
+.thank-you-content h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:500;margin-bottom:1.5rem;line-height:1.1;}
+.thank-you-content p{font-size:1.2rem;color:var(--charcoal-light);margin-bottom:3rem;line-height:1.7;}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1.05rem 2rem;border-radius:8px;font-size:.95rem;font-weight:500;transition:all .35s var(--ease);cursor:pointer;border:none;text-decoration:none;}
+.btn-primary{background:var(--forest);color:var(--ivory);}
+.btn-primary:hover{background:var(--forest-dark);transform:translateY(-2px);}
+footer{background:var(--forest-dark);color:var(--ivory);padding:3rem 0 2rem;text-align:center;}
+footer p{color:rgba(248,245,239,0.5);font-size:.85rem;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="EHANI Logo">
+      EHANI
+    </a>
+  </div>
+</nav>
+
+<section class="thank-you-section">
+  <div class="container">
+    <div class="thank-you-content">
+      <div class="icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h1>Message Received.</h1>
+      <p>Thank you for reaching out. We have received your inquiry and will review it personally. A member of our team will be in touch within two working days.</p>
+      <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 EHANI. Built with integrity, for generations.</p>
+  </div>
+</footer>
+
+</body>
+</html>
